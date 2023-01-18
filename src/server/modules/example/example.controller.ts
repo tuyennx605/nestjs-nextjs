@@ -1,13 +1,5 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Post,
-  Put,
-} from '@nestjs/common';
-import { v4 as uuidv4 } from 'uuid';
+import {Body, Controller, Delete, Get, Param, Post, Put} from '@nestjs/common';
+import {v4 as uuidv4} from 'uuid';
 
 @Controller('api/example')
 export class ExampleController {
@@ -20,7 +12,7 @@ export class ExampleController {
 
   @Post()
   add(@Body() dataCreate) {
-    const newData = { id: uuidv4(), ...dataCreate };
+    const newData = {id: uuidv4(), ...dataCreate};
     this.data.push(newData);
     return newData;
   }
@@ -29,7 +21,7 @@ export class ExampleController {
   update(@Param('id') id: string, @Body() dataUpdate) {
     for (let i = 0; i < this.data.length; i++) {
       if (this.data[i].id == id) {
-        this.data[i] = { ...this.data[i], ...dataUpdate, id: this.data[i].id };
+        this.data[i] = {...this.data[i], ...dataUpdate, id: this.data[i].id};
         return this.data[i];
       }
     }

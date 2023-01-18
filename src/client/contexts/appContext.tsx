@@ -6,6 +6,6 @@ type AppContextProviderProps = {
   children: React.ReactNode;
 };
 
-export function AppContextProvider({ children }: AppContextProviderProps) {
+export function AppContextProvider({children}: AppContextProviderProps) {
   return <AppContext.Provider value={{}}>{children}</AppContext.Provider>;
 }
