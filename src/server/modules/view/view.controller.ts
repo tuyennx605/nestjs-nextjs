@@ -1,7 +1,7 @@
-import { Controller, Get, Res, Req } from '@nestjs/common'
-import { Request, Response } from 'express'
+import { Controller, Get, Res, Req } from '@nestjs/common';
+import { Request, Response } from 'express';
 
-import { ViewService } from './view.service'
+import { ViewService } from './view.service';
 
 @Controller('')
 export class ViewController {
@@ -10,7 +10,7 @@ export class ViewController {
   @Get('*')
   static(@Req() req: Request, @Res() res: Response) {
     console.log();
-    const handle = this.viewService.getNextServer().getRequestHandler()
-    handle(req, res)
+    const handle = this.viewService.getNextServer().getRequestHandler();
+    handle(req, res);
   }
 }

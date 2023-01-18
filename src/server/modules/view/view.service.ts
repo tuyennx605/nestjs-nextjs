@@ -1,20 +1,20 @@
-import { Injectable, OnModuleInit } from '@nestjs/common'
-import next from 'next'
+import { Injectable, OnModuleInit } from '@nestjs/common';
+import next from 'next';
 
 @Injectable()
 export class ViewService implements OnModuleInit {
-  private server
+  private server;
 
   async onModuleInit(): Promise<void> {
     try {
-      this.server = next({ dev: true, dir: './src/client' })
-      await this.server.prepare()
+      this.server = next({ dev: true, dir: './src/client' });
+      await this.server.prepare();
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
   getNextServer() {
-    return this.server
+    return this.server;
   }
 }
