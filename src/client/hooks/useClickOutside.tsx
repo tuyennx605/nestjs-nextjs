@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import {useEffect} from 'react';
 
 /**
  * Usually need to combine with `stopPropagation` to work as expected
